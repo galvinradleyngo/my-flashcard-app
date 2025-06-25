@@ -165,7 +165,7 @@ const flashcardData = [
                 prompt: "**Action**: Practice speaking [LANGUAGE_NAME] with me. **Purpose**: To improve my conversational skills for a [SITUATION_E.G._TRAVELING_ABROAD] and **expand my linguistic repertoire**. **Expectation**: Engage in a [NUMBER]-turn dialogue about [TOPIC]. Give me feedback on my grammar and pronunciation after each of my responses. In a later turn, prompt me to use a specific, slightly more complex grammar structure or vocabulary word that we haven't used yet."
             },
             grade11_12: {
-                text: "Students can request highly challenging and specialized practice problems (e.g., proofs in abstract algebra, advanced essay critiques, debugging complex software); receive detailed, analytical feedback on their performance, including alternative approaches and deeper conceptual explanations; engage in sophisticated language practice, including nuanced cultural expressions and formal discourse; rehearse critical professional presentations or interviews, receiving feedback on strategic communication; or use GenAI for deep refinement of academic papers, including argumentation, stylistic elegance, and adherence to specific disciplinary conventions. **GenAI can provide feedback that forces students to articulate the *underlying principle* behind a correction, rather than just accepting the fix (desirable difficulty).**",
+                text: "Students can request highly challenging and specialized practice problems (e.g., proofs in abstract algebra, advanced essay critiques, debugging complex software); receive detailed, analytical feedback on their performance, including alternative approaches and deeper conceptual explanations; engage in sophisticated language practice, including nuanced cultural expressions and formal discourse; rehearse critical professional presentations or interviews, receiving feedback on strategic communication; or use GenAI for deep refinement of academic papers, including argumentation, stylistic elegance, and adherence to specific disciplinary conventions. **GenAI can provide feedback that forces students to articulate the *underlying principle* behind a correction, rather data than just accepting the fix (desirable difficulty).**",
                 prompt: "**Action**: Critique my [TYPE_OF_PAPER_E.G._RESEARCH_ESSAY]. **Purpose**: To refine my arguments and writing style for [ACADEMIC_COURSE] and **deepen my understanding of writing principles**. **Expectation**: Analyze the logical flow of my arguments, identify any rhetorical weaknesses, and suggest improvements for stylistic elegance and adherence to [SPECIFIC_DISCIPLINARY_CONVENTION]. When suggesting a correction, also ask me to explain the principle (e.g., 'Why is this sentence clearer now?') behind the improvement."
             }
         },
@@ -420,7 +420,7 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center p-4 w-full pt-20">
+        <div className="flex flex-col items-center justify-center p-4 w-full pt-20 flex-grow"> {/* Added flex-grow */}
             <button
                 onClick={onGoBack}
                 className="back-button mb-6 px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white font-semibold bg-violet-600 hover:bg-violet-700 transform hover:scale-105"
@@ -462,7 +462,7 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getTeacherPrompt()); }}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm"
+                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2"
                             >
                                 <Lightbulb className="w-4 h-4 mr-1" /> Get Prompt
                             </button>
@@ -476,7 +476,7 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getStudentPrompt()); }}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm"
+                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2"
                             >
                                 <Lightbulb className="w-4 h-4 mr-1" /> Get Prompt
                             </button>
@@ -699,7 +699,7 @@ const App = () => {
             </header>
 
             {/* Main content wrapper with padding to account for fixed header */}
-            <div className="flex flex-col items-center justify-center min-h-screen-minus-header p-4" style={{ paddingTop: '80px' }}> {/* Adjust paddingTop based on header height */}
+            <div className="flex flex-col items-center justify-center min-h-screen-minus-header p-4" style={{ paddingTop: '80px', flexGrow: 1 }}> {/* Added flexGrow: 1 */}
                 {view === 'home' ? (
                     <HomePage onSelectActivity={handleSelectActivity} />
                 ) : (
