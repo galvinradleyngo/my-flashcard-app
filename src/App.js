@@ -204,7 +204,7 @@ const flashcardData = [
             },
             grade7_10: {
                 text: "Students can use GenAI for brainstorming ideas for projects or essays, generating outlines, getting help with structuring their arguments, receiving suggestions for improving their writing style, translating ideas into different formats (e.g., detailed notes to a presentation script), or generating initial drafts that they then refine. **GenAI can offer feedback that requires students to diagnose the *root cause* of a grammatical error, not just correct it (desirable difficulty).**",
-                prompt: "**Action**: Generate an outline. **Purpose**: To help me structure my [TYPE_OF_ESSAY_E.G._ARGUMENTATIVE_ESSAY] on [ESSAY_TOPIC] and **master grammatical principles**. **Expectation**: The outline should include an introduction, [NUMBER] body paragraphs, and a conclusion. Suggest [NUMBER] ways to improve my writing style, focusing on [ASPECT_E.G._VARIED_SENTENCE_STRUCTURE]. If I make a grammatical error, point out the error and ask me to identify the rule I violated before giving the correct version."
+                prompt: "**Action**: Generate an outline. **Purpose**: To help me structure my [TYPE_OF_ESSAY_E.G._ARGUMENTATIVE_ESSAY] on [ESSAY_TOPIC] and **master grammatical principles**. **Expectation**: The outline should include an introduction with a clear thesis, [NUMBER] body paragraphs, and a conclusion. Suggest [NUMBER] ways to improve my writing style, focusing on [ASPECT_E.G._VARIED_SENTENCE_STRUCTURE]. If I make a grammatical error, point out the error and ask me to identify the rule I violated before giving the correct version."
             },
             grade11_12: {
                 text: "Students can use GenAI for advanced brainstorming and ideation for complex research papers or capstone projects; generating detailed, multi-section outlines; receiving sophisticated guidance on argumentative structures, logical flow, and persuasive techniques; translating complex data or research findings into compelling narratives or presentation formats; or generating robust initial code structures, allowing them to focus on algorithm implementation and creative problem-solving. **GenAI can provide feedback that requires students to explain the *trade-offs* of different design choices in their production (desirable difficulty).**",
@@ -420,7 +420,7 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center p-4 w-full pt-20 flex-grow"> {/* Added flex-grow */}
+        <div className="flex flex-col items-center justify-center p-4 w-full pt-20 flex-grow">
             <button
                 onClick={onGoBack}
                 className="back-button mb-6 px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white font-semibold bg-violet-600 hover:bg-violet-700 transform hover:scale-105"
@@ -462,7 +462,7 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getTeacherPrompt()); }}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2"
+                                className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2" // Changed text-xs to text-sm
                             >
                                 <Lightbulb className="w-4 h-4 mr-1" /> Get Prompt
                             </button>
@@ -476,7 +476,7 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getStudentPrompt()); }}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2"
+                                className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2" // Changed text-xs to text-sm
                             >
                                 <Lightbulb className="w-4 h-4 mr-1" /> Get Prompt
                             </button>
@@ -699,7 +699,7 @@ const App = () => {
             </header>
 
             {/* Main content wrapper with padding to account for fixed header */}
-            <div className="flex flex-col items-center justify-center min-h-screen-minus-header p-4" style={{ paddingTop: '80px', flexGrow: 1 }}> {/* Added flexGrow: 1 */}
+            <div className="flex flex-col items-center justify-center min-h-screen-minus-header p-4" style={{ paddingTop: '80px', flexGrow: 1 }}>
                 {view === 'home' ? (
                     <HomePage onSelectActivity={handleSelectActivity} />
                 ) : (
