@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // Importing icons from Lucide React
-import { Book, Search, MessageSquare, Repeat, PenTool, Users, Lightbulb } from 'lucide-react'; // Added Lightbulb icon for prompts
+import { Book, Search, MessageSquare, Repeat, PenTool, Users, Lightbulb, Home } from 'lucide-react'; // Added Lightbulb icon for prompts, and Home icon
 
 // Data for the flashcards, now with grade-differentiated examples and sample prompts
 const flashcardData = [
@@ -275,7 +275,7 @@ const GradeLevelSelector = ({ selectedGrade, onSelectGrade }) => {
                     onClick={() => onSelectGrade(grade.key)}
                     className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200
                         ${selectedGrade === grade.key
-                            ? 'bg-violet-700 text-white shadow-md'
+                            ? 'bg-violet-300 text-violet-900 shadow-md' // Changed for better readability
                             : 'bg-white text-violet-700 border border-violet-300 hover:bg-violet-100'
                         }`}
                 >
@@ -424,8 +424,10 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
         <div className="flex flex-col items-center justify-center p-4 w-full pt-20 flex-grow">
             <button
                 onClick={onGoBack}
-                className="back-button mb-6 px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white font-semibold bg-violet-600 hover:bg-violet-700 transform hover:scale-105"
+                className="back-button mb-6 px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white font-semibold transform hover:scale-105
+                bg-pink-600 hover:bg-pink-700 inline-flex items-center" // Made more prominent
             >
+                <Home className="w-5 h-5 mr-2" /> {/* Added home icon */}
                 ← Back to Home
             </button>
 
