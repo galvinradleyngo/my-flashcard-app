@@ -462,9 +462,9 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getTeacherPrompt()); }}
-                                className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm mt-2 min-w-[120px] bg-white text-violet-700 hover:bg-violet-100" // Ensured white background for button, violet text for contrast
+                                className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm mt-2 min-w-[120px] bg-green-500 text-yellow-100 whitespace-nowrap" // High contrast for debugging
                             >
-                                <Lightbulb className="w-4 h-4 mr-1 text-violet-700" />
+                                <Lightbulb className="w-4 h-4 mr-1 text-yellow-100" /> {/* High contrast icon */}
                                 Get Prompt
                             </button>
                         </div>
@@ -477,9 +477,9 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getStudentPrompt()); }}
-                                className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm mt-2 min-w-[120px] bg-white text-violet-700 hover:bg-violet-100" // Ensured white background for button, violet text for contrast
+                                className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm mt-2 min-w-[120px] bg-green-500 text-yellow-100 whitespace-nowrap" // High contrast for debugging
                             >
-                                <Lightbulb className="w-4 h-4 mr-1 text-violet-700" />
+                                <Lightbulb className="w-4 h-4 mr-1 text-yellow-100" /> {/* High contrast icon */}
                                 Get Prompt
                             </button>
                         </div>
