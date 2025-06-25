@@ -2,7 +2,7 @@
   "name": "my-flashcard-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://galvinradleyngo.github.io/my-flashcard-app",
+  "homepage": "https://YOUR_USERNAME.github.io/YOUR_REPO_NAME",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,4 +37,3 @@
     "gh-pages": "^6.1.1"
   }
 }
-Create package.json
