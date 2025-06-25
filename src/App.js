@@ -235,24 +235,6 @@ const flashcardData = [
                 prompt: "**Action**: Design a wicked problem for authentic collaboration. **Purpose**: To engage 11th-12th graders in a grand challenge related to [GLOBAL_ISSUE] and **foster strategic adaptation**. **Expectation**: Create a multi-faceted problem that requires interdisciplinary expertise (e.g., economics, sociology, engineering). Dynamically suggest [NUMBER] specialized roles (e.g., policy analyst, systems engineer) based on potential team strengths, and provide a template for an integrated planning and research module within a collaborative workspace. Midway through the simulated project, introduce a new, significant external constraint (e.g., budget cut, new regulation) that requires the group to completely re-evaluate and adapt their strategy."
             }
         },
-        studentInteractions: {
-            preK3: {
-                text: "Students can use GenAI to get ideas for playing together; ask for suggestions on how to share toys fairly; generate simple stories about friendship. **GenAI can prompt students to articulate *why* sharing is important after a group activity (desirable difficulty).**",
-                prompt: "**Action**: Give me ideas for playing together. **Purpose**: To help me and my friends play nicely and **understand the value of collaboration**. **Expectation**: Suggest [NUMBER] simple games or activities that we can all do together, like 'Building a big tower together with everyone's blocks'. After we finish, ask me 'Why was it important to share/work together in that game?'"
-            },
-            grade4_6: {
-                text: "Students can use GenAI as a shared brainstorming tool for group projects; a resource for collective problem-solving (e.g., 'How can our team best approach building this model volcano?'); a neutral party to summarize different group members' ideas; or to simulate simple scenarios where team decisions are required (e.g., 'What's the best way for our team to win this game?'). **GenAI can ask students to identify the *strongest* argument from their group's brainstorming session and explain why (desirable difficulty).**",
-                prompt: "**Action**: Act as a shared brainstorming tool. **Purpose**: To help our team generate ideas for our [GROUP_PROJECT_TYPE_E.G._MODEL_VOLCANO] and **develop critical evaluation of ideas**. **Expectation**: Ask us questions to get our ideas, then summarize our suggestions. If we get stuck, suggest [NUMBER] new directions for our brainstorming. After the brainstorming, ask us to identify the single strongest idea generated and explain our reasoning."
-            },
-            grade7_10: {
-                text: "Students can use GenAI as a shared brainstorming tool for generating initial ideas for group projects; a resource for collective problem-solving (e.g., 'How can our team best approach this challenge, considering X, Y, and Z factors?'); a neutral party to synthesize different group members' ideas into a coherent summary; or to simulate scenarios where team decisions and negotiations are required. **GenAI can present two equally plausible but mutually exclusive solutions and ask the group to justify their chosen compromise (desirable difficulty).**",
-                prompt: "**Action**: Act as a resource for collective problem-solving. **Purpose**: To help our team approach the challenge of [TEAM_CHALLENGE] and **practice strategic compromise**. **Expectation**: Ask us about our current ideas, then suggest [NUMBER] different strategies for tackling the problem, considering factors like [FACTOR_1] and [FACTOR_2]. Summarize our combined ideas into a coherent action plan. Then, present two equally viable but conflicting solutions to a sub-problem and ask the group to justify their chosen compromise, highlighting the trade-offs."
-            },
-            grade11_12: {
-                text: "Students can use GenAI as a sophisticated collaborative brainstorming partner, generating divergent and convergent ideas for complex team challenges; a comprehensive resource for advanced collective problem-solving (e.g., 'Given these constraints, how can our team optimize this engineering solution?'); a neutral facilitator to synthesize highly complex, disparate group contributions into actionable plans or comprehensive reports; or to simulate intricate scenarios requiring strategic team decision-making, negotiation, and conflict resolution. **GenAI can simulate a 'devil's advocate' role, intentionally poking holes in the group's proposed solution to force deeper justification and refinement (desirable difficulty).**",
-                prompt: "**Action**: Act as a sophisticated collaborative brainstorming partner. **Purpose**: To help our team generate divergent and convergent ideas for our [COMPLEX_TEAM_CHALLENGE] and **strengthen solution robustness**. **Expectation**: Ask us guiding questions to explore broad possibilities, then help us narrow down to actionable solutions. If we have conflicting ideas, help us synthesize them into a coherent strategy. Also, after we propose a solution, act as a 'devil's advocate' and present [NUMBER] strong counter-arguments or unforeseen problems, requiring us to refine and justify our solution further."
-            }
-        },
         humanAiHumanTip: "Human-AI-Human Tip: Teachers define collaborative tasks (Human), GenAI facilitates idea sharing and initial organization (AI), and students collaboratively develop, refine, and present shared outcomes (Human)." ,
         icon: <Users className="text-violet-500 mb-3" size={48} />
     }
@@ -462,9 +444,10 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getTeacherPrompt()); }}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2" // Changed text-xs to text-sm
+                                className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2 min-w-[120px]"
                             >
-                                <Lightbulb className="w-4 h-4 mr-1" /> Get Prompt
+                                <Lightbulb className="w-4 h-4 mr-1 text-violet-700" />
+                                Get Prompt
                             </button>
                         </div>
                         <div className="mb-4">
@@ -476,9 +459,10 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                             </p>
                             <button
                                 onClick={(e) => { e.stopPropagation(); handleGeneratePrompt(getStudentPrompt()); }}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2" // Changed text-xs to text-sm
+                                className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white text-violet-700 hover:bg-violet-100 transition-colors shadow-sm mt-2 min-w-[120px]"
                             >
-                                <Lightbulb className="w-4 h-4 mr-1" /> Get Prompt
+                                <Lightbulb className="w-4 h-4 mr-1 text-violet-700" />
+                                Get Prompt
                             </button>
                         </div>
                          <div>
