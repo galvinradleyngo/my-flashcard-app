@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // Importing icons from Lucide React
-import { Book, Search, MessageSquare, Repeat, PenTool, Users, Lightbulb, Home } from 'lucide-react'; // Added Lightbulb icon for prompts, and Home icon
+import { Book, MessageSquare, Users, Lightbulb, Home } from 'lucide-react'; // Removed unused icons: Search, Repeat, PenTool
 
 // Data for the flashcards, now with grade-differentiated examples and sample prompts
 const flashcardData = [
