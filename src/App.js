@@ -301,17 +301,11 @@ const PromptModal = ({ promptText, onClose }) => {
                 <h3 className="text-xl font-bold text-gray-800 mb-4">Sample GenAI Prompt</h3>
                 <div className="bg-gray-100 p-4 rounded-md border border-gray-200 text-gray-700 text-sm leading-relaxed overflow-auto max-h-64">
                     <pre className="whitespace-pre-wrap font-mono text-gray-700 select-all"> {/* select-all makes it easily highlightable */}
-                        {promptText.split(' ').map((word, index) => (
-                            word.startsWith('[') && word.endsWith(']') ? (
-                                <strong key={index} className="text-blue-600 font-semibold">{word} </strong>
-                            ) : (
-                                <span key={index}>{word} </span>
-                            )
-                        ))}
+                        {promptText}
                     </pre>
                 </div>
                 <p className="text-xs text-gray-500 mt-3">
-                    Highlight and copy the text above. Remember to edit the bracketed parts for your specific context!
+                    Open your preferred GenAI tool, copy this prompt as is, and submit. Interact with the tool by answering its questions to fill in the context.
                 </p>
             </div>
         </div>
