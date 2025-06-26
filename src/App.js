@@ -7,6 +7,7 @@ const flashcardData = [
     {
         activityType: "1. Acquisition",
         description: "Learners listen, read, or watch to grasp concepts. This involves receiving information.",
+        simpleExample: "Example: Reading a chapter, watching a documentary.", // New simple example
         teacherActivities: {
             preK3: {
                 text: "Generate simple stories with repetitive elements for early readers; create printable coloring pages that introduce new vocabulary; produce short, engaging audio clips for listening comprehension, **with varied voices to aid auditory processing (desirable difficulty)**.",
@@ -49,6 +50,7 @@ const flashcardData = [
     {
         activityType: "2. Investigation",
         description: "Learners explore, question, and research, often to solve problems or understand phenomena. This involves active inquiry.",
+        simpleExample: "Example: Conducting a science experiment, solving a historical mystery.", // New simple example
         teacherActivities: {
             preK3: {
                 text: "Create simple 'mystery boxes' with clues for students to guess an object; generate 'what if' scenarios about animal habitats; design scavenger hunts for colors or shapes around the classroom. **GenAI can generate 'mystery' elements that require simple inference rather than direct fact recall (desirable difficulty).**",
@@ -90,6 +92,7 @@ const flashcardData = [
     {
         activityType: "3. Discussion",
         description: "Learners articulate their understanding, challenge ideas, and engage in dialogue with peers or the teacher. This fosters collaborative meaning-making.",
+        simpleExample: "Example: Debating a current event, discussing a book's theme.", // New simple example
         teacherActivities: {
             preK3: {
                 text: "Generate simple prompts for 'show and tell'; create scenarios for sharing toys; suggest sentence starters for polite disagreements ('I hear you, but I think...'). **GenAI can generate prompts that require students to listen to a peer's idea and then add a related, but different, thought (desirable difficulty).**",
@@ -132,6 +135,7 @@ const flashcardData = [
     {
         activityType: "4. Practice",
         description: "Learners perform tasks repeatedly to develop skills and consolidate knowledge, often receiving feedback.",
+        simpleExample: "Example: Solving math problems, conjugating verbs, writing code.", // New simple example
         teacherActivities: {
             preK3: {
                 text: "Create endless variations of number matching games; generate simple drawing prompts; produce alphabet tracing worksheets. **GenAI can introduce slightly varied examples in a drill set (e.g., different fonts, object types) to prevent rote memorization (desirable difficulty).**",
@@ -174,6 +178,7 @@ const flashcardData = [
     {
         activityType: "6. Collaboration",
         description: "Learners work together to achieve a shared goal, often involving co-creation and negotiation.",
+        simpleExample: "Example: Group project, team presentation, peer review.", // New simple example
         teacherActivities: {
             preK3: {
                 text: "Suggest simple group activities; generate ideas for sharing toys; create songs about teamwork. **GenAI can suggest collaborative tasks that require students to physically move and re-group based on a changing criteria (desirable difficulty).**",
@@ -428,10 +433,14 @@ const FlashcardView = ({ initialIndex, onGoBack }) => {
                         <h2 className="text-2xl sm:text-3xl font-bold text-purple-800 mb-4">
                             {currentCard.activityType}
                         </h2>
-                        <p className="text-base sm:text-lg leading-relaxed text-gray-700">
+                        <p className="text-base sm:text-lg leading-relaxed text-gray-700 mb-2">
                             {currentCard.description}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-500 mt-4">
+                        {/* New section for simple example */}
+                        <p className="text-sm sm:text-base leading-relaxed text-gray-600 italic mb-4">
+                            {currentCard.simpleExample}
+                        </p>
+                        <p className="mt-auto text-violet-600 font-semibold text-lg sm:text-xl transform transition-transform duration-300 animate-pulse">
                             Click to reveal how GenAI supports this!
                         </p>
                     </div>
@@ -684,6 +693,15 @@ const App = () => {
                 .homepage-card:hover {
                     transform: translateY(-5px); /* Subtle lift */
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly more prominent shadow on hover */
+                }
+
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.5; }
+                }
+
+                .animate-pulse {
+                    animation: pulse 1.5s infinite;
                 }
                 `}
             </style>
